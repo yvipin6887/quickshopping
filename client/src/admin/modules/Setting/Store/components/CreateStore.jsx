@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 import { Form } from "../../../../components/Form";
 
-const createAttribute = () => {
+const CreateStore = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [attributeType, setAttributeType] = useState({});
     const onSubmit = data => console.log(data);
@@ -35,7 +35,18 @@ const createAttribute = () => {
                     {/* {errors.code && <p>{errors.code.message}</p>} */}
                 </div>
                 <div className="max-w-md mb-6">
-                    <label htmlFor="label" className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white">Type</label>
+                    <label htmlFor="label" className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white">Category</label>
+                    <Select
+                        defaultValue={attributeType}
+                        name="attributeType"
+                        options={attributeTypes}
+                        className="basic-select"
+                        classNamePrefix="select"
+                        onChange={handleAttrybiteTypeChange}
+                        />
+                </div>
+                <div className="max-w-md mb-6">
+                    <label htmlFor="label" className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-white">Local</label>
                     <Select
                         defaultValue={attributeType}
                         name="attributeType"
@@ -50,4 +61,4 @@ const createAttribute = () => {
     );
 }
 
-export default createAttribute;
+export default CreateStore;

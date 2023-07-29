@@ -8,7 +8,7 @@ import { Tabs, Tab } from "../../../../components/Tabs";
 import { LayoutProvider } from "../../../../components/LayoutProvider";
 import { Form } from "../../../../components/Form";
 
-const EditAttribute = () => {
+const AttributeGroupEditForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [attributeLabel, setAttributeLabel] = useState({});
   const [attributeType, setAttributeType] = useState({});
@@ -117,4 +117,4 @@ const EditAttribute = () => {
     );
 }
 
-export default withTabs(EditAttribute);
+export default withTabs(AttributeGroupEditForm);

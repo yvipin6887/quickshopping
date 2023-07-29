@@ -8,7 +8,7 @@ import { Tabs, Tab } from "../../../../components/Tabs";
 import { LayoutProvider } from "../../../../components/LayoutProvider";
 import { Form } from "../../../../components/Form";
 
-const AddStore = () => {
+const StoreEditForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [storeLocales, setStoreLocales] = useState([{value: 'en_US', label: 'English'}]);
     const [attributeLabel, setAttributeLabel] = useState({});
@@ -93,4 +93,4 @@ const AddStore = () => {
     );
 }
 
-export default withTabs(AddStore);
+export default withTabs(StoreEditForm);

@@ -6,7 +6,6 @@ import AttributeGroups from './AttributeGroups';
 export default {
     parentRoutes: 'setting',
     name:'Setting',
-    element: Store.routeProps.element,
     children: [
         Store,
         Attributes,

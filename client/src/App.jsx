@@ -8,10 +8,10 @@ import {
 // Import pages
 
 import AdminApp from './admin/AdminApp';
-import Analystics from "./admin/modules/Dashboard/Analystics";
+import Analystics from "./admin/modules/Dashboard/Analystics/components/Analystics";
 
 function App() {
-  // console.log(AdminApp);
+  // console.log(AdminApp[1].children[1]);
   const location = useLocation();
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
@@ -25,17 +25,22 @@ function App() {
       <Routes>
         {/* <Route exact path='/' element={<Dashboard />}/> */}
 
-        <Route path='/admin' key="admin" element={null}>
-          {AdminApp.map(main => (
-            
-            <Route path={main.parentRoutes} key={main.name} element={ null}>
-              {main.children.map(module => (
-                <Route {...module.routeProps} key={module.name} /> 
-              ))}
-            </Route>
-            
-          ))}
+        <Route path='/admin' key="admin" element={<Analystics />}>
+          
         </Route>
+        {AdminApp[0].children[0].router}
+        {AdminApp[1].children[0].router}
+        {AdminApp[2].children[0].router}
+        {AdminApp[2].children[1].router}
+        {AdminApp[2].children[2].router}
+        {/* {AdminApp.map(main => {
+            
+            {main.children.map(module => {
+              console.log(module.router);
+              {module.router}
+            })}
+          
+        })} */}
         
     </Routes>
     </>

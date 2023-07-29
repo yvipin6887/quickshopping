@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from 'react-router-dom';
 
-const ActionLayout = ({row,isOpenAction, setIsOpenAction}) => {
-
-    console.log(row);
+const ActionLayout = ({row, actionData,isOpenAction}) => {
+    const location = useLocation();
+    
     return (
         <div className='flex '>
-            {/* {actionData.map(data => (
+            
                 <NavLink
                 end
-                to='#'
-                className="mx-0.5" > {data}</NavLink>
-            ))} */}
+                to={`${location.pathname}/edit/${row.id}`}
+                className="mx-0.5" > Edit</NavLink>
+        
 
         
-          <button onClick={() => setIsOpenAction(true)}>
+          {/* <button onClick={() => setIsOpenAction(true)}>
              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16"> <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/> </svg>
           </button>
-          {isOpenAction ? <actionList /> : null}
+          {isOpenAction ? <actionList /> : null} */}
           
 
         </div>

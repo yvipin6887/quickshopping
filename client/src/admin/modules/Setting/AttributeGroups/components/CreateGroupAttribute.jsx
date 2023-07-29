@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 import { Form } from "../../../../components/Form";
 
-const createAttribute = () => {
+const createGroupAttribute = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [attributeType, setAttributeType] = useState({});
     const onSubmit = data => console.log(data);
@@ -50,4 +50,4 @@ const createAttribute = () => {
     );
 }
 
-export default createAttribute;
+export default createGroupAttribute;
